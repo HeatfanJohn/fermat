@@ -14,6 +14,7 @@ public class cliFermat
     public cliFermat() {
         this.newline = "\n";
         this.rnd = new Random();
+        this.textArea = new StringBuilder();
     }
     
     private void runTest(final String input) {
