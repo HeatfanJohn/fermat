@@ -5,14 +5,11 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 import javax.swing.JScrollPane;
 import java.awt.Font;
-import javax.swing.border.Border;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import javax.swing.BorderFactory;
-import java.awt.Component;
-import java.awt.LayoutManager;
 import java.awt.BorderLayout;
 import java.util.Random;
 import javax.swing.JLabel;
@@ -27,6 +24,10 @@ import javax.swing.JPanel;
 
 public class Fermat extends JPanel implements ActionListener
 {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private String newline;
     protected static final String text = "n";
     protected static final String buttonString = "test";
@@ -100,7 +101,6 @@ public class Fermat extends JPanel implements ActionListener
     }
     
     public void actionPerformed(final ActionEvent e) {
-        final String prefix = "n = \"";
         if ("test".equals(e.getActionCommand())) {
             this.getInput();
         }

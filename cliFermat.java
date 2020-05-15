@@ -8,19 +8,12 @@ import java.util.Random;
 public class cliFermat
 {
     private String newline;
-    private String textArea;
-    private String input;
+    private StringBuilder textArea;
     Random rnd;
     
-    public Fermat() {
+    public cliFermat() {
         this.newline = "\n";
         this.rnd = new Random();
-    }
-    
-    private void getInput() {
-        final String n = this.input.getText();
-        this.textArea.append("n = " + n + this.newline);
-        this.runTest(n);
     }
     
     private void runTest(final String input) {
@@ -105,22 +98,13 @@ public class cliFermat
         this.textArea.append(String.valueOf(s) + this.newline);
     }
     
-    public void start() {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                Fermat.this.createAndShowGUI();
-            }
-        });
-    }
-    
     public static void main(final String[] args) {
-        final Fermat f = new Fermat();
-	if( args.length == 0 ) {
-	    System.out.println( "Input number argument missing!" );
-	} else {
-	    input = args[0];
-            f.start();
-	    System.out.print( f.textArea );
-	}
+        final cliFermat f = new cliFermat();
+        if( args.length == 0 ) {
+            System.out.println( "Input number argument missing!" );
+        } else {
+            f.runTest(args[0]);;
+            System.out.print( f.textArea );
+        }
     }
 }
